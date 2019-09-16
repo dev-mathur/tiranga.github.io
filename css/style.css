@@ -104,3 +104,8 @@ footer.page-footer {
 .container center {
   display: block;
 }
+
+img {
+  width: 50%;
+  height: auto;
+}
