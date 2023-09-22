@@ -109,3 +109,18 @@ img {
   width: 50%;
   height: auto;
 }
+.show-on-smallBtn{
+  display: none;
+}
+@media only screen and (max-width : 600px) {
+  img.mob_parallax_img{
+    width: auto;
+    height: 100%;
+  }
+  .show-on-smallBtn{
+    display: block;
+  }
+  .hide-on-small-onlyBtn{
+    display:none;
+  }
+}
