@@ -104,7 +104,6 @@
 }
 
 .navbar-dark .navbar-brand img {
-    max-height: 60px;
     transition: .5s;
 }
 
@@ -472,27 +471,4 @@
 }
 .set-bg-lightgrey {
     background-color: #fafafa;
-}
-/* Ensure the navbar has enough height for the logo */
-.navbar {
-    padding: 0.5rem 1rem; /* Adjust padding if needed */
-    background-color: #343a40; /* Navbar background color */
-}
-
-.navbar-logo {
-    width: 50px; /* Adjust this value */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Ensure the logo doesn't exceed the container */
-}
-
-/* Ensure the logo is visible and not constrained */
-.navbar-brand {
-    display: flex;
-    align-items: center; /* Vertically center the logo */
-    padding: 0;
-}
-
-/* Ensure the button doesn't affect the logo */
-.navbar-toggler {
-    z-index: 1; /* Ensure it doesn’t overlap or push elements */
 }
