@@ -133,6 +133,8 @@
                                 </div>
                             </div>
                             <div class="col-12">
+                                <!-- Step 1: Add this line -->
+                                <div class="h-captcha" data-captcha="true"></div>
                                 <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
                             </div>
                         </div>
@@ -140,7 +142,6 @@
                 </div>
             </div>
         </div>
-        <!-- The rest of your contact sections -->
     </div>
 </div>
 <!-- Contact End -->
@@ -215,6 +216,45 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <!-- Step 2: Add the Web3Forms script -->
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+
+    <!-- Inline JavaScript for hCaptcha -->
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            // Prevent form submission
+            event.preventDefault();
+        
+            // Get the values of the inputs
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const message = document.getElementById("message").value.trim();
+        
+            // Check for empty fields
+            if (!name || !email || !phone || !message) {
+                alert("All fields are required. Please fill them in.");
+                return false;
+            }
+        
+            // Validate email format
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+        
+            // Check if hCaptcha is completed
+            if (!hcaptcha.getResponse()) {
+                alert("Please complete the CAPTCHA.");
+                return false;
+            }
+        
+            // If all checks pass, allow form submission
+            alert("Form submitted successfully!");
+            this.submit(); // Optional: you can handle AJAX submission here instead of form submit.
+        });
+        </script>        
 </body>
 
 </html>
